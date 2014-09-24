@@ -1,0 +1,14 @@
+#include <tunables/global>
+
+/usr/sbin/haveged {
+  #include <abstractions/base>
+
+  /proc/*/status r,
+  /proc/sys/kernel/osrelease r,
+  /proc/sys/kernel/random/poolsize r,
+  /sys/devices/system/cpu/ r,
+  /sys/devices/system/cpu/** r,
+  /usr/sbin/haveged mr,
+
+  #include <local/usr/sbin/haveged>
+}
