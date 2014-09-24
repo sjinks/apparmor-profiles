@@ -1,0 +1,12 @@
+#include <tunables/global>
+
+/opt/pmtalog/pmtalog {
+  #include <abstractions/base>
+  #include <abstractions/mysql>
+  #include <abstractions/nameservice>
+
+  /opt/pmtalog/config r,
+  /opt/pmtalog/pmtalog mr,
+
+  #include <local/opt.pmtalog.pmtalog>
+}
