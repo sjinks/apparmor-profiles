@@ -1,0 +1,19 @@
+#include <tunables/global>
+
+/usr/sbin/tinyproxy {
+  #include <abstractions/base>
+  #include <abstractions/nameservice>
+
+  capability setgid,
+  capability setuid,
+
+  /etc/tinyproxy.conf r,
+  /run/tinyproxy/tinyproxy.pid rw,
+  /tmp/tinyproxy.servers.lock.* rwk,
+  /tmp/tinyproxy.shared.* rw,
+  /usr/sbin/tinyproxy mr,
+  /usr/share/tinyproxy/*.html r,
+  /var/log/tinyproxy/tinyproxy.log rw,
+
+  #include <local/usr.sbin.tinyproxy>
+}
