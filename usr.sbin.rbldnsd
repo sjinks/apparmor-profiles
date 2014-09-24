@@ -1,0 +1,19 @@
+#include <tunables/global>
+
+/usr/sbin/rbldnsd flags=(complain) {
+  #include <abstractions/base>
+  #include <abstractions/nameservice>
+  #include <abstractions/nis>
+
+
+  capability net_bind_service,
+  capability setgid,
+  capability setuid,
+  capability sys_chroot,
+
+  /run/rbldnsd.pid w,
+  /usr/sbin/rbldnsd mr,
+  /var/lib/rbldns/* r,
+
+  #include <local/usr.sbin.rbldnsd>
+}
