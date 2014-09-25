@@ -5,7 +5,7 @@
 
   /usr/bin/beanstalkd mr,
   /var/lib/beanstalkd/ r,
-  /var/lib/beanstalkd/binlog.* w,
+  /var/lib/beanstalkd/binlog.* rw,
   /var/lib/beanstalkd/lock wk,
 
   #include <local/usr.bin.beanstalkd>
