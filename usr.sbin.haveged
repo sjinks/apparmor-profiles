@@ -12,5 +12,5 @@
   /sys/devices/system/cpu/** r,
   /usr/sbin/haveged mr,
 
-  #include <local/usr/sbin/haveged>
+  #include <local/usr.sbin.haveged>
 }
